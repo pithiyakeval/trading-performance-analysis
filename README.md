@@ -1,4 +1,6 @@
 Trading Performance Analysis
+
+
 Author: Keval Pithiya
 GitHub: https://github.com/pithiyakeval/trading-performance-analysis
 
@@ -14,16 +16,6 @@ Analyze trades executed by profitable and non-profitable traders.
 Provide clear visualizations using bar charts, pie charts, and donut charts.
 Summarize trader activity and distribution for strategic insights.
 
-Project Structure
-DataScienceAssignment/
-│
-├── Lib/                     # Supporting libraries or modules
-├── Scripts/                 # Python scripts for analysis
-├── trader_analysis/         # Jupyter notebooks for analysis
-│   └── notebooks/
-│       └── analysis.ipynb
-├── requirements.txt         # Python dependencies
-└── README.md                # Project documentation
 
 Installation
 Clone the repository:
