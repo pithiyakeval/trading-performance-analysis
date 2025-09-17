@@ -72,107 +72,89 @@ st.markdown("""
         border-radius: 0.25rem;
         margin-bottom: 1rem;
     }
-            /* Add these to your existing CSS for enhanced visual impact */
-
-.insight-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
-    border-left: 5px solid #2E86AB;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.insight-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-}
-
-.correlation-matrix {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin: 1.5rem 0;
-}
-
-.correlation-item {
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.positive-correlation {
-    border-bottom: 4px solid #28a745;
-}
-
-.negative-correlation {
-    border-bottom: 4px solid #dc3545;
-}
-
-.performance-marker {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin: 0.25rem;
-}
-
-.performance-positive {
-    background: rgba(40, 167, 69, 0.15);
-    color: #28a745;
-}
-
-.performance-negative {
-    background: rgba(220, 53, 69, 0.15);
-    color: #dc3545;
-}
-
-.strategy-card {
-    background: linear-gradient(135deg, #2E86AB 0%, #A23B72 100%);
-    color: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-bottom: 1.5rem;
-}
-
-.strategy-card h4 {
-    color: white;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-}
-
-/* Animation for key metrics */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-.high-impact-metric {
-    animation: pulse 2s ease-in-out infinite;
-}
-
-/* Sentiment level indicators */
-.sentiment-bar {
-    height: 8px;
-    border-radius: 4px;
-    background: linear-gradient(90deg, #dc3545 0%, #fd7e14 25%, #ffc107 50%, #20c997 75%, #28a745 100%);
-    margin: 0.5rem 0;
-    position: relative;
-}
-
-.sentiment-marker {
-    position: absolute;
-    top: -5px;
-    width: 4px;
-    height: 18px;
-    background: #2E86AB;
-    transform: translateX(-50%);
-}
+    .insight-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+        border-left: 5px solid #2E86AB;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .insight-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    }
+    .correlation-matrix {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+    .correlation-item {
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .positive-correlation {
+        border-bottom: 4px solid #28a745;
+    }
+    .negative-correlation {
+        border-bottom: 4px solid #dc3545;
+    }
+    .performance-marker {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin: 0.25rem;
+    }
+    .performance-positive {
+        background: rgba(40, 167, 69, 0.15);
+        color: #28a745;
+    }
+    .performance-negative {
+        background: rgba(220, 53, 69, 0.15);
+        color: #dc3545;
+    }
+    .strategy-card {
+        background: linear-gradient(135deg, #2E86AB 0%, #A23B72 100%);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+    }
+    .strategy-card h4 {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    .high-impact-metric {
+        animation: pulse 2s ease-in-out infinite;
+    }
+    .sentiment-bar {
+        height: 8px;
+        border-radius: 4px;
+        background: linear-gradient(90deg, #dc3545 0%, #fd7e14 25%, #ffc107 50%, #20c997 75%, #28a745 100%);
+        margin: 0.5rem 0;
+        position: relative;
+    }
+    .sentiment-marker {
+        position: absolute;
+        top: -5px;
+        width: 4px;
+        height: 18px;
+        background: #2E86AB;
+        transform: translateX(-50%);
+    }
     .footer {
         text-align: center;
         margin-top: 3rem;
@@ -187,52 +169,55 @@ st.markdown("""
 @st.cache_data
 def load_data():
     try:
-        # Try to load your actual datasets
-        fear_greed_df = pd.read_csv('../data/fear_greed_index.csv')
-        historical_data_df = pd.read_csv('../data/historical_data.csv')
+        # -----------------------------
+        # 1️⃣ Load your datasets
+        # -----------------------------
+        daily_trader_stats = pd.read_csv("daily_trader_stats.csv")  # Update path if needed
+        fear_greed_df = pd.read_csv("fear_greed.csv")               # Update path if needed
+        historical_data_df = pd.read_csv("historical_data.csv")     # Update path if needed
+
+        # -----------------------------
+        # 2️⃣ Ensure 'date' columns are datetime
+        # -----------------------------
+        daily_trader_stats['date'] = pd.to_datetime(daily_trader_stats['date'])
+        fear_greed_df['date'] = pd.to_datetime(fear_greed_df['date'])
+        historical_data_df['date'] = pd.to_datetime(historical_data_df['date'])
+
+        # -----------------------------
+        # 3️⃣ Optional: normalize to remove time part
+        # -----------------------------
+        daily_trader_stats['date'] = daily_trader_stats['date'].dt.normalize()
+        fear_greed_df['date'] = fear_greed_df['date'].dt.normalize()
+        historical_data_df['date'] = historical_data_df['date'].dt.normalize()
+
+        # -----------------------------
+        # 4️⃣ Merge daily_trader_stats with fear_greed_df
+        # -----------------------------
         
-        # Clean column names
-        historical_data_df.columns = historical_data_df.columns.str.lower().str.replace(' ', '_')
-        fear_greed_df.columns = fear_greed_df.columns.str.lower().str.replace(' ', '_')
-        
-        # Convert date columns
-        historical_data_df['date'] = pd.to_datetime(historical_data_df['timestamp_ist'], dayfirst=True).dt.date
-        fear_greed_df['date'] = pd.to_datetime(fear_greed_df['date']).dt.date
-        
-        # Create daily trader stats
-        daily_trader_stats = historical_data_df.groupby('date').agg({
-            'closed_pnl': 'sum',
-            'size_usd': 'mean',
-            'account': 'count'
-        }).reset_index().rename(columns={'account': 'num_traders'})
-        
-        # Merge with fear greed data
-        merged_df = pd.merge(daily_trader_stats, fear_greed_df, on='date', how='left')
-        
+        merged_df = pd.merge(
+            daily_trader_stats,
+            fear_greed_df,
+            on='date',
+            how='left'
+        )
+
+        # -----------------------------
+        # 5️⃣ Return all dataframes
+        # -----------------------------
         return fear_greed_df, historical_data_df, merged_df
-        
+
     except FileNotFoundError:
-        st.warning("Could not find the data files. Using sample data for demonstration.")
-        
-        # Create more realistic sample data
+        # Sample data for demonstration (2023-2025)
         np.random.seed(42)
-        dates = pd.date_range(start='2023-01-01', end='2023-12-31', freq='D')
-        
-        # Create realistic fear/greed data with trends
-        values = []
-        classifications = []
+        dates = pd.date_range(start='2023-01-01', end='2025-12-31', freq='D')
+
+        # Fear/Greed data
+        values, classifications = [], []
         current_value = 50
-        
         for i in range(len(dates)):
-            # Add some randomness with momentum
             change = np.random.normal(0, 8)
-            current_value += change
-            
-            # Keep within bounds
-            current_value = max(0, min(100, current_value))
+            current_value = max(0, min(100, current_value + change))
             values.append(current_value)
-            
-            # Classify
             if current_value >= 75:
                 classifications.append('Extreme Greed')
             elif current_value >= 55:
@@ -243,27 +228,23 @@ def load_data():
                 classifications.append('Fear')
             else:
                 classifications.append('Extreme Fear')
-        
+
         fear_greed_df = pd.DataFrame({
             'timestamp': range(len(dates)),
             'value': values,
             'classification': classifications,
             'date': dates
         })
-        
-        # Sample historical_data_df with more realistic patterns
+
+        # Historical trading data
         accounts = [f'Account_{i}' for i in range(200)]
         coins = ['BTC', 'ETH', 'SOL', 'AVAX', 'BNB', 'XRP', 'ADA', 'DOT']
         sides = ['Buy', 'Sell']
-        
-        # Create date distribution with more trades on weekdays
         date_weights = [1.5 if d.weekday() < 5 else 0.5 for d in dates]
         normalized_weights = [w/sum(date_weights) for w in date_weights]
         trade_dates = np.random.choice(dates, 10000, p=normalized_weights)
-        
-        # Create PnL that correlates with fear/greed index
         fear_greed_by_date = dict(zip(fear_greed_df['date'], fear_greed_df['value']))
-        
+
         historical_data_df = pd.DataFrame({
             'account': np.random.choice(accounts, 10000),
             'coin': np.random.choice(coins, 10000, p=[0.4, 0.25, 0.1, 0.08, 0.07, 0.05, 0.03, 0.02]),
@@ -281,28 +262,29 @@ def load_data():
             'timestamp': np.random.uniform(1.6e12, 1.7e12, 10000)
         })
         
-        # Create more realistic PnL that correlates with market sentiment
-        historical_data_df['date'] = pd.to_datetime(historical_data_df['timestamp_ist']).dt.date
-        historical_data_df['fear_greed_value'] = historical_data_df['date'].map(fear_greed_by_date)
+        # Add date column to historical_data_df
+        historical_data_df['date'] = trade_dates
         
-        # Generate PnL that tends to be positive in greed periods and negative in fear periods
+        # Ensure date columns are datetime
+        fear_greed_df['date'] = pd.to_datetime(fear_greed_df['date']).dt.normalize()
+        historical_data_df['date'] = pd.to_datetime(historical_data_df['date']).dt.normalize()
+        
+        # Add fear_greed_value to historical_data_df
+        historical_data_df['fear_greed_value'] = historical_data_df['date'].map(fear_greed_by_date)
         historical_data_df['closed_pnl'] = np.random.normal(
             loc=(historical_data_df['fear_greed_value'] - 50) * 20,
             scale=300,
             size=len(historical_data_df)
         )
-        
-        # Create daily trader stats
+
         daily_trader_stats = historical_data_df.groupby('date').agg({
             'closed_pnl': 'sum',
             'size_usd': 'mean',
             'account': 'count'
         }).reset_index().rename(columns={'account': 'num_traders'})
-        
-        # Merge with fear greed data
-        fear_greed_df['date'] = pd.to_datetime(fear_greed_df['date']).dt.date
+
         merged_df = pd.merge(daily_trader_stats, fear_greed_df, on='date', how='left')
-        
+
         return fear_greed_df, historical_data_df, merged_df
 
 # Load data
@@ -355,9 +337,9 @@ if selected_coin != 'All' and 'coin' in historical_data_df_filtered.columns:
 
 if len(date_range) == 2:
     start_date, end_date = date_range
-    merged_df_filtered = merged_df_filtered[(merged_df_filtered['date'] >= start_date) & (merged_df_filtered['date'] <= end_date)]
+    merged_df_filtered = merged_df_filtered[(merged_df_filtered['date'] >= pd.to_datetime(start_date)) & (merged_df_filtered['date'] <= pd.to_datetime(end_date))]
     historical_data_df_filtered = historical_data_df_filtered[
-        (historical_data_df_filtered['date'] >= start_date) & (historical_data_df_filtered['date'] <= end_date)
+        (historical_data_df_filtered['date'] >= pd.to_datetime(start_date)) & (historical_data_df_filtered['date'] <= pd.to_datetime(end_date))
     ]
 
 # Main content
@@ -691,10 +673,7 @@ if not historical_data_df_filtered.empty and 'account' in historical_data_df_fil
         
         st.plotly_chart(fig, use_container_width=True)
 
-
-
-
-
+# Market Intelligence Section
 st.markdown(
     """
     <div style="font-family:Segoe UI,Arial,sans-serif; color:#1C2833; line-height:1.6; padding:15px;">
@@ -744,4 +723,3 @@ st.markdown("""
     <p>📊 Trader Behavior Insights Dashboard | Designed with care</p>
 </div>
 """, unsafe_allow_html=True)
-

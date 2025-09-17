@@ -9,3 +9,4 @@ ipykernel
 plotly
 streamlit
 pyarrow
+statsmodels
